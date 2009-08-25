@@ -25,6 +25,9 @@
     
     // Format the event tag
     $tag = 'microformats-dinner-' . date('Y-m-d', strtotime($event->hcalendar->dtstart));
+    
+    // Format the wiki URL
+    $wiki_url = date('Y-m-d', strtotime($event->hcalendar->dtstart)) . '-weekly-dinner-sf';
 
     // Fix address
     $adr = $event->hcalendar->location->adr;
@@ -57,12 +60,13 @@ One of several microformats [[weekly-meetup]] [[events]].
 ;Web
 :<span class="url"><?= $event->from ?></span>
  
-'''[http://feeds.technorati.com/events/referer Add this event to your calendar]''' http://www.boogdesign.com/images/buttons/microformat_hcalendar.png
+'''[http://suda.co.uk/projects/microformats/hcalendar/get-cal.php?uri=http%3A//microformats.org/wiki/events/<?= $wiki_url ?> Add this event to your calendar]''' http://www.boogdesign.com/images/buttons/microformat_hcalendar.png
+
  
 == Weekly Meetup ==
 <div class="description">The microformats community has grown and stabilized over the past few years, news of adoptions, new ideas and challenges come up frequently enough that there are no shortage of new topics to discuss on a weekly basis.
  
-Come along, meet up with the microformats community in San Francisco 
+Come along, meet up with the microformats community in San Francisco.
  
 In another city? Check out [[weekly-meetup#Other_Cities|Weekly Meetup: Other Cities]] and help organize one in your own city!</div>
  
@@ -84,7 +88,7 @@ If you use Twitter, mention ''@microformats dinner''' in tweets about the event,
 == Attendees ==
 Add yourself alphabetically sorted by family name if you plan on attending or attended this event.
  
-* [[User:MatthewLevine|Matthew Levine]]
+* [[User:YourName|You]]
 * ...
  
 == Notes ==
