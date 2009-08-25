@@ -2,8 +2,9 @@
     $upcoming_id = $_GET['upcoming_id'];
     
     if (!is_numeric($upcoming_id)) {
-        echo "Invalid request: parameter upcoming_id must be numeric\n";
-        echo 'Example: <a href="http://www.phusikos.com/event.php?upcoming_id=2376485">http://www.phusikos.com/event.php?upcoming_id=2376485</a>.';
+        echo "<p>Invalid request: parameter upcoming_id must be numeric.</p>\n";
+        echo '<p>Example: <a href="http://www.phusikos.com/event.php?upcoming_id=2376485">http://www.phusikos.com/event.php?upcoming_id=2376485</a>.</p>';
+        exit;
     }
     
     // Fetched parsed microformats JSON from Optimus
@@ -13,7 +14,7 @@
     $event = json_decode($json);
     
     if (!$event) {
-        echo "Invalid request: $upcoming_id - $optimus_url\n";
+        echo "<p>Invalid request: $upcoming_id - $optimus_url</p>\n";
         exit;
     }
     
