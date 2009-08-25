@@ -3,7 +3,7 @@
     
     if (!is_numeric($upcoming_id)) {
         echo "Invalid request: parameter upcoming_id must be numeric\n";
-        echo 'Example: <a href="http://www.phusikos.com/event.php?upcoming_id=2376485">http://www.phusikos.com/event.php?upcoming_id=2376485</a>.";
+        echo 'Example: <a href="http://www.phusikos.com/event.php?upcoming_id=2376485">http://www.phusikos.com/event.php?upcoming_id=2376485</a>.';
     }
     
     // Fetched parsed microformats JSON from Optimus
@@ -19,8 +19,9 @@
     
     // Format start and end dates
     date_default_timezone_set('America/Los_Angeles');
-    $start = date('c', strtotime($event->hcalendar->dtstart));
-    $end = $event->hcalendar->dtend ? date('c', strtotime($event->hcalendar->dtend)) : null;
+    $start_date = date('Y-m-d', strtotime($event->hcalendar->dtstart));
+    $start_time = date('H:i', strtotime($event->hcalendar->dtstart));
+    $end_time = $event->hcalendar->dtend ? date('H:i', strtotime($event->hcalendar->dtend)) : null;
     
     // Format the event tag
     $tag = 'microformats-dinner-' . date('Y-m-d', strtotime($event->hcalendar->dtstart));
@@ -47,7 +48,7 @@ One of several microformats [[weekly-meetup]] [[events]].
 <div class="event-page vevent">
 == Details ==
 ;When
-:<span class="dtstart"><?= $start ?></span><? if ($end): ?> to <span class="dtend"><?= $end ?></span><? endif; ?>
+:<span class="dtstart"><span class="value"><?= $start_date ?></span> from <span class="value"><?= $start_time ?></span></span><? if ($end_time): ?> to <span class="dtend"><span class="value"><?= $end_time ?></span></span><? endif; ?>
 
 ;Where
 :<span class="location vcard"><span class="fn org"><?= $fn ?></span>, <span class="adr"><span class="street-address"><?= $street_address ?></span>, <span class="locality"><?= $locality ?></span>, <span class="region"><?= $region ?></span> <span class="postal-code"><?= $postal_code ?></span> <span class="country-name"><?= $country_name ?></span></span><?= $location_url ? '<span class="url">' . $location_url . '</span>' : '' ?></span>
