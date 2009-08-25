@@ -84,13 +84,13 @@ If you use Twitter, mention ''@microformats dinner''' in tweets about the event,
 Add yourself alphabetically sorted by family name if you plan on attending or attended this event.
  
 * [[User:MatthewLevine|Matthew Levine]]
-* …
+* ...
  
 == Notes ==
  
 Topics Discussed:
  
-* …
+* ...
  
 == Photographs ==
  
@@ -101,7 +101,7 @@ Topics Discussed:
 == Articles and Blog Posts ==
 Articles and blog posts following up on the meetup. Add a link to your post in the list below:
  
-* …
+* ...
 
 Also, find posts on this meetup on [http://blogsearch.google.com/blogsearch?q=<?= $tag ?> Google Blog Search] or [http://technorati.com/search/<?= $tag ?> Technorati].
  
