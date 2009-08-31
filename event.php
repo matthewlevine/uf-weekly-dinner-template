@@ -45,7 +45,7 @@
     
     header('Content-type: text/plain');
 ?>
-<entry-title>Microformats Weekly Dinner, San Francisco</entry-title>
+<entry-title><?= $event->hcalendar->summary ?></entry-title>
 __TOC__
 One of several microformats [[weekly-meetup]] [[events]].
  
